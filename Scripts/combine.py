@@ -45,9 +45,9 @@ with open(combined_sdf_path, 'w') as sdf_out:
 # Write CSV file
 with open(csv_path, 'w', newline='') as csv_out:
     writer = csv.writer(csv_out)
-    writer.writerow(["CID", "Compound Name"])
-    for cid, name, _ in compounds:
-        writer.writerow([cid, name])
+    writer.writerow(["CID",])
+    for cid, _, _ in compounds:
+        writer.writerow([cid])
 
 print(f"Combined SDF file created at: {combined_sdf_path}")
 print(f"CSV file created at: {csv_path}")
