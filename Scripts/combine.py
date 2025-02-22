@@ -2,8 +2,11 @@ import os
 import csv
 import re
 
-# Define paths
-base_dir = "D:/Kishant/COSMO/Data"
+# Get the directory of the current script
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define paths relative to the script's directory
+base_dir = os.path.join(os.path.dirname(SCRIPT_DIR), "Data")
 sdf_library_dir = os.path.join(base_dir, "sdf_library")
 output_dir = os.path.join(base_dir, "combined_output")
 combined_sdf_path = os.path.join(output_dir, "combined_compounds.sdf")
@@ -40,7 +43,7 @@ compounds.sort(key=lambda x: x[0])
 with open(combined_sdf_path, 'w') as sdf_out:
     for _, _, content in compounds:
         sdf_out.write(content)
-        #sdf_out.write("$$====GonnaTestThingsOut====$$\n")
+        # sdf_out.write("$$====GonnaTestThingsOut====$$\n")
 
 # Write CSV file
 with open(csv_path, 'w', newline='') as csv_out:
