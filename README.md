@@ -9,7 +9,7 @@ This repository contains scripts for downloading and processing chemical compoun
 - Downloads 3D conformer SDF files from PubChem
 - Organizes compounds by CID in separate folders
 - Combines individual SDF files into a single file
-- Generates a CSV file with CID and compound name information
+- Generates a CSV file with CID in ascending order.
 
 ## Requirements
 
